@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../layout/Footer";
+import HomeService from "./services/HomeService";
 
 const Home = () => {
+
+    const { handleCepAvailable } = HomeService();
+
+    useEffect(() => {
+        handleCepAvailable();
+    },[])
 
     return(
         <div id="page-content" className="page-content header-clear bg bg-cover bg-transparent">
